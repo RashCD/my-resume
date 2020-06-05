@@ -1,6 +1,10 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import App from 'next/app'
 import '../styles/index.css'
+
+import { register } from 'codelift'
+register({ React, ReactDOM })
 
 class MyApp extends App {
   render() {
