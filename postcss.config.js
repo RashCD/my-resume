@@ -4,7 +4,7 @@ const purgecss = [
     content: ['./components/**/*.js', './pages/**/*.js'],
     defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
   },
-]
+];
 
 module.exports = {
   plugins: [
@@ -13,4 +13,4 @@ module.exports = {
     'postcss-preset-env',
     ...(process.env.NODE_ENV === 'production' ? [purgecss] : []),
   ],
-}
+};

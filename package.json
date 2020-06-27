@@ -10,12 +10,13 @@
     "lint": "eslint --ext .js,.ts,.jsx,.tsx --ignore-path .gitignore ."
   },
   "dependencies": {
-    "autoprefixer": "^9.7.6",
+    "gray-matter": "^4.0.2",
     "next": "9.3.5",
     "postcss-import": "^12.0.1",
     "postcss-preset-env": "^6.7.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-markdown": "^4.3.1",
     "tailwindcss": "^1.3.4"
   },
   "devDependencies": {
