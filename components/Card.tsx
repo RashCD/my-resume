@@ -1,6 +1,8 @@
-const Card = (): JSX.Element => {
+const Card: React.FC = props => {
   return (
-    <div className="border-solid bg-white h-auto border-0 p-3 shadow-lg rounded m-3">test</div>
+    <div className="border-solid bg-white h-auto border-0 p-3 shadow-lg rounded m-3">
+      {props.children}
+    </div>
   );
 };
 
