@@ -1,5 +1,7 @@
 const Card = (): JSX.Element => {
-  return <div className="border-solid border-2 bg-white rounded-md p-1 shadow-md h-auto">test</div>
-}
+  return (
+    <div className="border-solid bg-white h-auto border-0 p-3 shadow-lg rounded m-3">test</div>
+  );
+};
 
-export default Card
+export default Card;

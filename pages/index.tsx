@@ -1,5 +1,5 @@
-import Circle from 'components/Circle'
-import Card from 'components/Card'
+import Circle from 'components/Circle';
+import Card from 'components/Card';
 
 const Header = (): JSX.Element => {
   return (
@@ -9,19 +9,19 @@ const Header = (): JSX.Element => {
       </div>
       <div className="bg-white h-48">hero here</div>
     </div>
-  )
-}
+  );
+};
 
 const Content = (): JSX.Element => {
   return (
     <div className="flex flex-1 justify-center">
-      <div className="flex border justify-center mt-5 flex-col w-screen max-w-screen-sm p-3">
+      <div className="flex justify-center mt-5 flex-col w-screen max-w-screen-sm p-1 border">
         <Circle />
         <Card />
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Home = (): JSX.Element => {
   return (
@@ -29,7 +29,7 @@ const Home = (): JSX.Element => {
       <Header />
       <Content />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
