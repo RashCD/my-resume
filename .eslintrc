@@ -27,6 +27,7 @@
           }
         }
       }
-    ]
+    ],
+    "unicorn/prefer-module": "off"
   }
 }
