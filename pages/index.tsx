@@ -4,6 +4,7 @@ import { GetStaticProps } from 'next';
 
 import Circle from 'components/Circle';
 import Card from 'components/Card';
+import Profile from 'components/Profile';
 
 interface IMyDetails {
   name: string;
@@ -24,34 +25,12 @@ type IHomeProps = {
   posts: IMyDetails[] & IMyExperiences[];
 };
 
-const Header = ({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) => (
-  <div className="shadow-md">
-    <div className="bg-white flex h-12 px-3 py-0 font-bold text-lg items-center relative">
-      <div className="">{title}</div>
-    </div>
-    <div className="bg-white h-48">{description}</div>
-  </div>
-);
-
 const Home = (props: IHomeProps) => {
-  const myDetail = props.posts.find(
-    (data: IMyDetails) => data.name
-  ) as IMyDetails;
-  const myExperiences = props.posts.filter(
-    (data: IMyExperiences) => data.company
-  );
-
-  const { name, info } = myDetail;
+  const myExperiences = props.posts.filter((data: IMyExperiences) => data.company);
 
   return (
-    <div>
-      <Header title={name} description={info} />
+    <>
+      <Profile />
       <div className="flex flex-1 justify-center">
         <div className="flex justify-center mt-5 flex-col w-screen max-w-screen-sm p-1">
           <Circle />
@@ -68,7 +47,7 @@ const Home = (props: IHomeProps) => {
           </Card>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
@@ -76,9 +55,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const files = fs.readdirSync(`${process.cwd()}/content/details`);
 
   const posts = files.map(filename => {
-    const markdownWithMetadata = fs
-      .readFileSync(`content/details/${filename}`)
-      .toString();
+    const markdownWithMetadata = fs.readFileSync(`content/details/${filename}`).toString();
 
     const { data } = matter(markdownWithMetadata);
 

@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 body {
-  @apply bg-blue-500;
+  @apply bg-gray-50;
+}
+
+.layout {
+  @apply h-screen;
 }

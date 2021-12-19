@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from 'next/app.js';
 import '../styles/index.css';
 
-import {register} from 'codelift';
+import { register } from 'codelift';
+import Layout from 'components/Layout';
 
-register({React, ReactDOM});
+register({ React, ReactDOM });
 
-class MyApp extends App {
-	render() {
-		const {Component, pageProps} = this.props;
-		return <Component {...pageProps} />;
-	}
+function MyApp({ Component, pageProps }) {
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
 
 export default MyApp;
